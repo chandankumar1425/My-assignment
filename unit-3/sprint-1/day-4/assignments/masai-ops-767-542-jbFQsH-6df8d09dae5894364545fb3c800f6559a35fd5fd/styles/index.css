@@ -1,0 +1,34 @@
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: aliceblue;
+  }
+  
+  #navbar div {
+    margin: 10px;
+  }
+  
+  #navbar a {
+    margin: 10px;
+  }
+  
+  .item {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item img {
+    width: 90%;
+    height: 200px;
+  }
+  
+  #items {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 20px;
+  }
+  

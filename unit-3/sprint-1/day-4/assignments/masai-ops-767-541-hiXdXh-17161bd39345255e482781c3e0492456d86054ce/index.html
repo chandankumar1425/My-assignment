@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-101 C1</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      /* Write necessery Styles Here  */
+      .top {
+        display: flex;
+      }
+      .top > div {
+        width: 50%;
+      }
+      .mid-heading > h1,
+      .mid-heading > p {
+        text-align: center;
+      }
+      .top-left{
+        
+      }
+      .top-right > * {
+        display: flex;
+      }
+      .top-right {
+        margin: auto;
+      }
+      .top-right > div > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .top-right img {
+        width: 200px;
+      }
+      .mid-container {        
+        display:flex;
+        grid-template-columns: repeat(4,1fr);
+        place-items: center;
+      }
+      .mid-container > div {     
+        width:80%;
+        padding: 1%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="top-left">
+          <!-- Here put one h1 tag, one p tag and one img tag  -->
+          <h1>A smallcase is a basket of stocks that reflects an idea</h1>
+          <p>
+            smallcases are portfolios of stocks or ETFs, that track a theme,
+            strategy or objective
+          <p>
+          <img
+            src="https://camo.githubusercontent.com/f39b95fee2e1d08ac3973d7e4be9d60450a804374eb21a3baab6dacb5eef6fcc/68747470733a2f2f6d617361692d636f757273652e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f656469746f722f75706c6f6164732f323032322d30392d30312f53637265656e73686f74253230323032322d30382d3330253230617425323031312e33372e3134253230414d5f3335303631392e706e67"
+            alt=""
+          />
+        </div>
+        <div class="top-right">
+          <!-- 3 Child divs should come here. Each div should have one image one h2 tag and one p tag  -->
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/what-is-smallcase/1.svg"
+              alt=""
+            />
+            <div>
+              <h2>Simple to understand</h2>
+              <p>
+                smallcases are modern investing products based on simple ideas
+                you can understand.
+              </p>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/what-is-smallcase/1.svg"
+              alt=""
+            />
+            <div>
+              <h2>Simple to understand</h2>
+              <p>
+                smallcases are modern investing products based on simple ideas
+                you can understand.
+              </p>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/what-is-smallcase/1.svg"
+              alt=""
+            />
+            <div>
+              <h2>Simple to understand</h2>
+              <p>
+                smallcases are modern investing products based on simple ideas
+                you can understand.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mid-heading">
+          <!-- here you have to put one h1 tag and one p tag  -->
+          <h1>There is a smallcase for everyone</h1>
+          <p>
+            Looking to start with a small investment or thinking of low
+            volatililty? Choose from a diverse menu
+          </p>
+        </div>
+        <div class="mid-container">
+          <!-- Here You should have 4 Child divs which will make the cards. Each card will have one image one h2 tag and one p tag  -->
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/LowInv.svg"
+              alt=""
+            />
+            <h2>Low Volatility</h2>
+            <p>Go to stable returns at low volatility levels</p>
+          </div>
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/LowInv.svg"
+              alt=""
+            />
+            <h2>Low Volatility</h2>
+            <p>Go to stable returns at low volatility levels</p>
+          </div>
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/LowInv.svg"
+              alt=""
+            />
+            <h2>Low Volatility</h2>
+            <p>Go to stable returns at low volatility levels</p>
+          </div>
+          <div>
+            <img
+              src="https://www.smallcase.com/static/images/svg/LowInv.svg"
+              alt=""
+            />
+            <h2>Low Volatility</h2>
+            <p>Go to stable returns at low volatility levels</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

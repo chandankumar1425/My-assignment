@@ -1,0 +1,139 @@
+@token = “{{login.response.headers.X-AuthToken}}”
+
+### GET all recipes
+GET http://localhost:9090/recipeIngredients?_limit=10&_page=1
+
+
+### GET all employees
+GET http://localhost:9090/employees
+
+### GET all employees sorted
+GET http://localhost:9090/employees?_sort=salary&_order=asc
+
+###
+GET http://127.0.0.1:9090/employees?_sort=salary&_order=asc
+
+### POST a new employee
+POST http://localhost:9090/employees
+Content-Type: application/json
+
+  {
+    "name": "Prashant",
+    "image": "/images/avatar/avatar1.jpeg",
+    "department": 3,
+    "salary": 3000000
+  }
+
+### GET a particular employee by ID
+GET http://localhost:9090/employees/yjkyh1htCb
+
+
+### DELETE a particular employee
+DELETE http://localhost:9090/employees/FMNR1OS31P
+
+### Patch Salary of an employee
+### Only the salary field will be updated
+PATCH http://localhost:9090/employees/yjkyh1htCb
+Content-Type: application/json
+
+{
+  "salary": 5000000
+}
+
+### PUT Salary of an employee (guess what will happen?)
+### update all fields. the ones not supplied will be deleted from the database.
+PUT http://localhost:9090/employees/yjkyh1htCb
+Content-Type: application/json
+
+  {
+    "name": "Prashant",
+    "image": "/images/avatar/avatar2.jpeg",
+    "department": 3,
+    "salary": 500000,
+    "createdAt": 1670325954162
+  }
+
+### GET all todos
+
+GET http://localhost:9090/todos
+
+### GET all users
+
+GET http://localhost:9090/users
+
+### Register a new user
+POST http://localhost:9090/register
+Content-Type: application/json
+
+{
+  "username": "prithvi",
+  "password": "prithvi",
+  "email": "prithvi@mail.com",
+  "firstname": "prithvi",
+  "lastname": "chouhan",
+  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/762.jpg"
+}
+
+### Log in an existing user
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjc0MTA4ODQ2LCJleHAiOjE2NzQxMTk2NDZ9.goLdzvhK5TXaiZz7EYF9ACu6oMQsLQc21OzwKHETZfg
+POST http://localhost:9090/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### access todo's (with our token)
+
+GET http://localhost:9090/recipes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjc0MTIxMzE1LCJleHAiOjE2NzQxMzIxMTV9._isEgDMpWFe7o_wMXhDBlOr8gZQoY6XTbyvz5SjSSzc
+
+
+### access todo's (with our token)
+
+GET http://localhost:9090/todos?userId=1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjc0MTIxMzE1LCJleHAiOjE2NzQxMzIxMTV9._isEgDMpWFe7o_wMXhDBlOr8gZQoY6XTbyvz5SjSSzc
+
+
+
+
+
+### access todo with its id
+GET http://localhost:9090/todos/86
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjcwNTk2Mjk1LCJleHAiOjE2NzA2MDcwOTV9.qUdm043dW3fY-bYHntcDIbAEjhdJg5X9Bz8BBiHNyEI
+
+### delete todo of id: jOlm9bijJc
+DELETE http://localhost:9090/todos/JhhTIKUUaJ
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpdmVrc2luZ2giLCJwYXNzd29yZCI6IiQyYiQxMCR2NzhTTnZBZ0Z0Z3huNWZJNUh3RlZldkw0N2I2aFlsU0ZoSEU3SEJwMUtiMnhhY040QzcuNiIsImVtYWlsIjoidnN0QG1haWwuY29tIiwiZmlyc3RuYW1lIjoiVml2ZWsiLCJsYXN0bmFtZSI6IlRvbWFyIiwiYXZhdGFyIjoiaHR0cHM6Ly9jbG91ZGZsYXJlLWlwZnMuY29tL2lwZnMvUW1kM1c1RHVoZ0hpckxIR1ZpeGk2Vjc2TGhDa1pVejZwbkZ0NUFKQml5dkh5ZS9hdmF0YXIvNzYyLmpwZyIsImNyZWF0ZWRBdCI6MTY3MDQ5NTc2OTMwNCwiaWQiOjUyLCJpYXQiOjE2NzA0OTYwMzksImV4cCI6MTY3MDUwNjgzOX0.HEVhUcBPNvt5GWmRYDnjS5E2a3dzDGYkAA8HiVbknBY
+
+### Just want to toggle completed for JhhTIKUUaJ
+PATCH http://localhost:9090/todos/86
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjcwNTk2NDAyLCJleHAiOjE2NzA2MDcyMDJ9.UXChospwEx8ycQ4WHdRZ09C7fU7NV7l6dnFd3Miapb0
+
+{
+  "completed": false
+}
+
+### PATCH recipe price
+
+GET http://localhost:9090/recipes/52768
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjc0MTIxMzE1LCJleHAiOjE2NzQxMzIxMTV9._isEgDMpWFe7o_wMXhDBlOr8gZQoY6XTbyvz5SjSSzc
+
+{
+  "price": 256.000
+}
+
+### Get all users
+GET http://localhost:9090/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImZpcnN0bmFtZSI6IkFkIiwibGFzdG5hbWUiOiJNaW5pc3RlciIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRsTG01THA0MHVCUjlDVXJabjU4Q2RPbDh5dTVHcDJ1bUFPLjZseS52V2NaMGEwdlVLc0hpQyIsImF2YXRhciI6Imh0dHBzOi8vY2xvdWRmbGFyZS1pcGZzLmNvbS9pcGZzL1FtZDNXNUR1aGdIaXJMSEdWaXhpNlY3NkxoQ2taVXo2cG5GdDVBSkJpeXZIeWUvYXZhdGFyLzc2Mi5qcGciLCJ1c2VyTGV2ZWwiOjQsImNyZWF0ZWRBdCI6MTY3MDE2NTk4MDYzOCwiaWF0IjoxNjcyODk2NzUyLCJleHAiOjE2NzI5MDc1NTJ9.oE5xIG6OkIn2D3BjpNXKFMwzF8PHPPkAAU6aDymngJw
+
+### get paginated data
+GET http://localhost:9090/recipes?_limit=15&_page=3

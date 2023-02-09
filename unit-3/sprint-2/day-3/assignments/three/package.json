@@ -1,0 +1,19 @@
+{
+  "name": "lld-e3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "7.19.6",
+    "@babel/preset-env": "7.19.4",
+    "babel-jest": "29.2.2",
+    "jest": "29.2.2"
+  }
+}

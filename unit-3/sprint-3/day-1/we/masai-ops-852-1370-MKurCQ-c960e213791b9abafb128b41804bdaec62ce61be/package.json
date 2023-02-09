@@ -1,0 +1,32 @@
+{
+  "name": "JS-Vite-With-Mock-Server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "live": "npm run start",
+    "build": "vite build --port=8080",
+    "server": "node server.js",
+    "watch": "npm run server & npm run start",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome",
+    "test": "cypress run --browser chrome"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cypress": "^10.11.0",
+    "cypress-localstorage-commands": "^2.2.1",
+    "dotenv": "^16.0.3",
+    "json-server": "^0.17.1",
+    "jsonwebtoken": "^9.0.0",
+    "lowdb": "^5.0.5",
+    "short-unique-id": "^4.4.4",
+    "typescript": "^4.7.4",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "vite": "^3.2.3"
+  },
+  "homepage": "."
+}

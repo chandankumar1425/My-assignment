@@ -1,0 +1,26 @@
+{
+  "name": "js-counter-class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masai-problems/js-counter-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masai-problems/js-counter-class/issues"
+  },
+  "homepage": "https://github.com/masai-problems/js-counter-class#readme",
+  "dependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-jest": "^29.0.1",
+    "jest": "^29.0.1"
+  }
+}
